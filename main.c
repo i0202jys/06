@@ -1,17 +1,15 @@
 #include <stdio.h>
-void print_star()
+void func(void)
 {
-    int i;
- for(i=0; i<10; i++) 
-printf("*");   
+    int x;
+    printf("func x is at %p\n", &x);
 }
 
-int main(void) {
+int main(void)
+{
+    int x; //func의 x랑 아예 다름. 저희는 다른 엑소입니다
+    printf("main x is at %p\n", &x);
+    func();
 
-print_star();
-print_star();
-print_star();
-
-return 0;
-
+    return 0;
 }
